@@ -70,7 +70,6 @@ uint8_t Button()
 {
 	uint8_t button_state = BUTTON_NONE;
 
-	static uint8_t button_last_state = 0;
 	static uint8_t button_tempo = 0;
 	static int16_t ButtonDoubleTimeout = 0;
 	static bool		ButtonDoubleOk = false;
@@ -91,7 +90,6 @@ uint8_t Button()
 		{
 			button_state = BUTTON_LONG;
 			ButtonDoubleTimeout = -1;
-			button_last_state = button_state;
 		}
 		else
 			button_state = BUTTON_PRESSED;
