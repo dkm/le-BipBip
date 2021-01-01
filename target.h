@@ -33,7 +33,6 @@
 /*******************************************************/
 //#define 	DEBUG
 //#define 	DEBUG_BUTTON
-//#define 	BLUETOOTH_ENABLE
 //#define 	DEMO
 //#define 	SENSOR_DATA_SIMU
 //#define 	SENSOR_SIMULATED

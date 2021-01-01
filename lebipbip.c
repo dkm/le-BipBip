@@ -39,7 +39,6 @@
 #include "filter.h"
 #include "charge_pump.h"
 #include "sink.h"
-#include "bluetooth.h"
 #include "timer.h"
 #include "vario_settings.h"
 
@@ -107,7 +106,6 @@ int main(void)
 	BatteryCheck();
 	ChargePumpStop();
 	SensorStop();
-	BTStop();
 	while (BatteryIsLow())
 	{
 		BatteryCheckStop();
@@ -166,7 +164,6 @@ int main(void)
 			{
 				ExitLowPower = false;
 				SensorStop();
-				BTStop();
 				do
 				{
 					ChargePumpStop();
@@ -179,7 +176,6 @@ int main(void)
 					BatteryCheckInit();
 					BatteryCheck();
 				}while (BatteryIsLow());
-				BTStart();
 				SensorStart();
 				VarioInitialiseFilter(&sensor);
 				int timeout = SINK_ENTER_SINK_SETTING_TIMEOUT_MS;
@@ -205,7 +201,6 @@ int main(void)
 void DisableAllGPIO()
 {
 
-    B_UNSET(P1SEL, 0); B_UNSET(P1SEL2, 0); B_SET(P1DIR, 0); B_UNSET(P1OUT, 0);		// BT Power
     B_UNSET(P1SEL, 1); B_UNSET(P1SEL2, 1); B_UNSET(P1DIR, 1); B_UNSET(P1OUT, 1);	// RX pin
     B_UNSET(P1SEL, 2); B_UNSET(P1SEL2, 2); B_UNSET(P1DIR, 2); B_UNSET(P1OUT, 2);	// TX pin
     B_UNSET(P1SEL, 3); B_UNSET(P1SEL2, 3); B_UNSET(P1DIR, 3); B_UNSET(P1OUT, 3);	// Button
@@ -227,7 +222,6 @@ void DisableAllGPIO()
     B_UNSET(P3SEL, 1); B_UNSET(P3SEL2, 1); B_SET(P3DIR, 1); B_UNSET(P3OUT, 1);		// unused
     B_UNSET(P3SEL, 2); B_UNSET(P3SEL2, 2); B_SET(P3DIR, 2); B_UNSET(P3OUT, 2);		// H bridge
     B_UNSET(P3SEL, 3); B_UNSET(P3SEL2, 3); B_SET(P3DIR, 3); B_UNSET(P3OUT, 3);		// unused
-    B_UNSET(P3SEL, 4); B_UNSET(P3SEL2, 4); B_UNSET(P3DIR, 4); B_UNSET(P3OUT, 4);	// BT AT mode
     B_UNSET(P3SEL, 5); B_UNSET(P3SEL2, 5); B_UNSET(P3DIR, 5); B_UNSET(P3OUT, 5);	// Charge pump
     B_UNSET(P3SEL, 6); B_UNSET(P3SEL2, 6); B_UNSET(P3DIR, 6); B_UNSET(P3OUT, 6);	// Charge pump
     B_UNSET(P3SEL, 7); B_UNSET(P3SEL2, 7); B_SET(P3DIR, 7); B_UNSET(P3OUT, 7);		// unused
