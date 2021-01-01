@@ -17,11 +17,11 @@ void BatteryCheckStop(void);
 bool AutoPowerOffTrue(void);
 void AutoPowerOffReset(void);
 void BatteryPrintVoltage(void);
-#define PowerEnterUltraLowPower() (__bis_SR_register(LPM4_bits + GIE))       // Enter LPM4 w/ interrupts enabled
-#define PowerExitUltraLowPower() (_BIC_SR_IRQ(LPM4_bits))                 	// Clear LPM4 bits from 0(SR)
+#define PowerEnterUltraLowPower() __bis_SR_register(LPM4_bits + GIE)       // Enter LPM4 w/ interrupts enabled
+#define PowerExitUltraLowPower() _BIC_SR_IRQ(LPM4_bits)                 	// Clear LPM4 bits from 0(SR)
 
-#define PowerEnterLowPower() (__bis_SR_register(LPM0_bits + GIE))       // Enter LPM0 (Timer and PWM running) w/ interrupts enabled
-#define PowerExitLowPower() (_BIC_SR_IRQ(LPM0_bits))                 	// Clear LPM0 bits from 0(SR)
+#define PowerEnterLowPower() __bis_SR_register(LPM0_bits + GIE)       // Enter LPM0 (Timer and PWM running) w/ interrupts enabled
+#define PowerExitLowPower() _BIC_SR_IRQ(LPM0_bits)                 	// Clear LPM0 bits from 0(SR)
 
 
 #endif /* POWER_H_ */

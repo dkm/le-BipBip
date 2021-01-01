@@ -18,7 +18,7 @@
 // In Circuit Test defines
 #define 	ICT_TAB_STRING					"\t\t"
 //Energy and power
-#define 	AUTOPOWER_OFF_TIME_S			20*60
+#define 	AUTOPOWER_OFF_TIME_S			(20*60)
 // Vario define
 #define 	VARIO_DISABLE_SOUND_TIME_MS		500		// Disable vario for this time in ms when the button is pressed or on startup
 // Filter&Sensor

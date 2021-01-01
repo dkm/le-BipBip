@@ -1,10 +1,9 @@
-
-#include <stdbool.h>
-#include <stdint.h>
 #ifndef BUZZER_H_INCLUDED
 #define BUZZER_H_INCLUDED
 
-const char * const song;
+#include <stdbool.h>
+#include <stdint.h>
+
 void play( const char *song);
 extern const char * stringSink;
 extern const char * stringLift;
