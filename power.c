@@ -38,13 +38,13 @@ bool AutoPowerOffTrue(void)
 	{
 		if(AutoPowerOffCountDownCycle == 0)
 			return true;
-		else
-			AutoPowerOffCountDownCycle--;
-			return false;
+
+                AutoPowerOffCountDownCycle--;
+                return false;
 	}
-	else
-		return false;
+        return false;
 }
+
 void AutoPowerOffReset(void)
 {
 	AutoPowerOffCountDownCycle = AUTOPOWER_OFF_TIME_S;
