@@ -72,7 +72,7 @@ void BatteryPrintVoltage(void)
 	char printf_len = 0;
 	printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "MCU VCC: %dmV %s", BatteryVoltage, ICT_TAB_STRING);
 	if (BatteryVoltage > 3000 && BatteryVoltage < 3600 )
-		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "OK\n\r");
+		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "sensor OK\n\r");
 	else
 		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "FAIL\n\r");
 	UartXmitString(printf_buff);

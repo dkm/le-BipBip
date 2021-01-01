@@ -240,7 +240,7 @@ void MS5607Start(void)
 	}
 	else
 	{
-		snprintf(printf_buff, sizeof(printf_buff), "OK \n\r");
+		snprintf(printf_buff, sizeof(printf_buff), "sensor OK \n\r");
 		UartXmitString(printf_buff);
 	}
 
@@ -258,7 +258,7 @@ void MS5607Start(void)
 	printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "Pressure: ");
 	printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "%luPa %s", pressure, ICT_TAB_STRING);
 	if (pressure > 1000 && pressure < 120000 )
-		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "OK\n\r");
+		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "sensor OK\n\r");
 	else
 		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "FAIL\n\r");
 	UartXmitString(printf_buff);
@@ -267,7 +267,7 @@ void MS5607Start(void)
 	printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "Temperature: ");
 	printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "%ld.%lu°C %s", temperature/100,(uint32_t)temperature%100, ICT_TAB_STRING);
 	if (temperature > -4000 && temperature < 8500 )
-		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "OK\n\r");
+		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "sensor OK\n\r");
 	else
 		printf_len += snprintf(printf_buff+printf_len, sizeof(printf_buff)-printf_len, "FAIL\n\r");
 	UartXmitString(printf_buff);

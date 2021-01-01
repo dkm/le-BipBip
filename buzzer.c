@@ -366,7 +366,7 @@ void BuzzerSetBlocking(unsigned int freq, unsigned int ms)
 void BuzzerSetNow(unsigned int freq, unsigned int ms)
 {
 	if (CurrentFreq != freq)					//avoid constant tone glitch
-		BuzzerSetFrequency(freq);				//update only if requiered
+		BuzzerSetFrequency(freq);				//update only if required
 	CurrentLen = ms;
 	NextLen = 0;
 }

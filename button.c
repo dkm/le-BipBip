@@ -34,7 +34,7 @@ void ButtonInit()
 	}
 	if ( timeout == 0 )
 	{
-		snprintf(printf_buff, sizeof(printf_buff), "OK\n\r");
+		snprintf(printf_buff, sizeof(printf_buff), "button OK\n\r");
 
 	}
 	else// button pressed or floating pin
