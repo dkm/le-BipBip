@@ -5,7 +5,6 @@
  *      Author: timothee
  */
 #include <msp430.h>
-#include <legacymsp430.h>
 #include "timer.h"
 #include "bithacks.h"
 #include "target.h"

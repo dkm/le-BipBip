@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <msp430.h>
-#include <legacymsp430.h>
 #include "target.h"
 #include "sensor.h"
 #include "data.h"

@@ -31,7 +31,6 @@
 
 #endif
 #include <msp430.h>
-#include <legacymsp430.h>
 #include <stdint.h>
 #include "oscillator.h"
 //#include "ringbuffer.h"

@@ -5,7 +5,6 @@
  *      Author: timothee
  */
 #include <msp430.h>
-#include <legacymsp430.h>
 #include <stdint.h>
 #include "target.h"
 #include "power.h"

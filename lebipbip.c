@@ -27,7 +27,6 @@
 #include <math.h>
 
 #include <msp430.h>
-#include <legacymsp430.h>
 #include "bithacks.h"
 #include "target.h"
 #include "button.h"

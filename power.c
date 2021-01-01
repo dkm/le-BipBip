@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <msp430.h>
 #include "bithacks.h"
-#include <legacymsp430.h>
 #include "power.h"
 #include "oscillator.h"
 #include "target.h"
