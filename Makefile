@@ -1,8 +1,31 @@
-CC=msp430-gcc
-CFLAGS=-g -Os -Wall -I/usr/msp430/include -mmcu=msp430g2553 -fmessage-length=0
-LDFLAGS=-lm
+CC?=msp430-gcc
 
-SOURCES=bluetooth.c buzzer.c filter.c ms5607.c power.c sink.c timer.c vario.c button.c charge_pump.c lebipbip.c oscillator.c sensor.c spi.c uart.c vario_settings.c
+
+ifeq ($(MSP430_GCC_INCLUDE_DIR),)
+$(error Missing MSP430_GCC_INCLUDE_DIR)
+else
+export MSP430_GCC_INCLUDE_DIR
+endif
+
+CFLAGS?=-g -Os -Wall  -mmcu=msp430g2553 -ffunction-sections -fdata-sections -flto
+LDFLAGS?=-lm  -Wl,-gc-sections -flto
+
+SOURCES=buzzer.c \
+	filter.c \
+	ms5607.c \
+	power.c \
+	sink.c \
+	timer.c \
+	vario.c \
+	button.c \
+	charge_pump.c \
+	lebipbip.c \
+	oscillator.c \
+	sensor.c \
+	spi.c \
+	uart.c \
+	vario_settings.c
+
 OBJECTS=$(patsubst %.c,%.o,$(SOURCES))
 
 main: solarclimb.elf
