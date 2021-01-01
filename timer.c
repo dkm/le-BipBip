@@ -164,7 +164,7 @@ void TimerWait()
 }
 
 
-interrupt(TIMER0_A0_VECTOR) TIMER0_A0_ISR(void)
+void __interrupt_vec(TIMER0_A0_VECTOR) TIMER0_A0_ISR(void)
 {
 	if (TimerCycleCounter)
 	{
@@ -177,7 +177,7 @@ interrupt(TIMER0_A0_VECTOR) TIMER0_A0_ISR(void)
 	}
 }
 
-interrupt(TIMER0_A1_VECTOR) TIMER0_A1_ISR(void)
+void __interrupt_vec(TIMER0_A1_VECTOR) TIMER0_A1_ISR(void)
 {
 }
 

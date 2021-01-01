@@ -138,7 +138,7 @@ uint8_t Button()
 }
 
 
-interrupt(BUTTON_PORT_VECTOR) Button_ISR(void)
+void __interrupt_vec(BUTTON_PORT_VECTOR) Button_ISR(void)
 {
 	B_UNSET(BUTTON_PORT_IFG, BUTTON_PIN_BIT);		// clear IFG
 	PowerExitUltraLowPower();		// resume system main loop
